@@ -1,4 +1,6 @@
 import Navbar from "../../components/NavBar";
+import ProcessSection from "@/components/ProcessSection";
+import Rescult from "../../components/Result";
 import Footer from "../../components/Footer";
 import {
   Megaphone,
@@ -279,6 +281,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      <ProcessSection/>
 
       {/* DETAILED SERVICES */}
       <section className="relative py-24">
@@ -403,6 +406,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      <Rescult />
 
       {/* CTA */}
       <section className="relative overflow-hidden py-24">

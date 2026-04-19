@@ -3,11 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import Navbar from "../../components/NavBar";
-import Footer from "../../components/Footer";
+import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
-  Briefcase,
   Globe,
   Image as ImageIcon,
   Megaphone,
@@ -26,114 +25,46 @@ type Category = (typeof categories)[number];
 
 const portfolioData: Record<Category, PortfolioItem[]> = {
   Websites: [
-    {
-      title: "FSG Institute",
-      subtitle: "Professional education-focused website",
-      image: "/portfolio/websites/website-1.png",
-      link: "https://fsginstitute.com",
-    },
-    {
-      title: "AT Visas",
-      subtitle: "Clean visa and consultancy business website",
-      image: "/portfolio/websites/website-2.png",
-      link: "https://atvisas.com",
-    },
-    {
-      title: "Digital AJK",
-      subtitle: "Modern business-focused digital website",
-      image: "/portfolio/websites/website-3.png",
-      link: "https://digitalajk.com",
-    },
+    { title: "AAA Home Pro", subtitle: "10,000+ leads generated", image: "/web1.png" },
+    { title: "DFW Dust Buster", subtitle: "100+ leads generated", image: "/web2.png" },
+    { title: "Duct Bee Clean", subtitle: "20,000+ leads generated", image: "/web3.png" },
+    { title: "President Air Comfort", subtitle: "100+ leads generated", image: "/web4.png" },
+    { title: "American Air Comfort", subtitle: "100+ leads generated", image: "/web5.png" },
+    { title: "Green Home Care", subtitle: "100+ leads generated", image: "/web6.png" },
+    { title: "Tripple Air LLC", subtitle: "4,000+ leads generated", image: "/web7.png" },
+    { title: "Calwest Garage Door", subtitle: "100+ leads generated", image: "/web8.png" },
+    { title: "Atvisas", subtitle: "100+ leads generated", image: "/web9.png" },
+    { title: "Fsginstitute", subtitle: "100+ leads generated", image: "/web10.png" },
+    { title: "Digitalajk", subtitle: "100+ leads generated", image: "/web11.png" },
+  ],
+Leads: [
+    { title: "55 Leads", subtitle: "$2.98 each", image: "/11.png" },
+    { title: "21 Leads", subtitle: "$5.03 each", image: "/22.png" },
+    { title: "43 Leads", subtitle: "$6.84 each", image: "/lead3.png" },
+    { title: "96 Leads", subtitle: "$2.90 each", image: "/lead4.png" },
+    { title: "269 Leads", subtitle: "$7.03 each", image: "/lead5.png" },
+    { title: "96 Leads", subtitle: "$10.51 each", image: "/lead6.png" },
+    { title: "252 Leads", subtitle: "$12.73 each", image: "/lead7.png" },
+    { title: "649 Leads", subtitle: "$11.55 each", image: "/lead8.png" },
+    { title: "402 Leads", subtitle: "$6.88 each", image: "/lead9.png" },
+  ],
+    Logos: [
+    { title: "The Gilded Fork", image: "/gilded_fork.png" },
+    { title: "Aspire Academy", image: "/aspire_academy.png" },
+    { title: "Grillora", image: "/grillora.png" },
+    { title: "Elonia", image: "/elonia.png" },
+    { title: "Lunora", image: "/lunora.png" },
+    { title: "Corex", image: "/corex.png" },
+    { title: "BitBloom", image: "/bitbloom.png" },
+    { title: "BeatBloom / Chicora", image: "/chicora.png" },
+  ],
+   "Social Media": [
+    { title: "English In 24 Hours", image: "/s1.png" },
+    { title: "Stellar Migration", image: "/s2.png" },
+    { title: "Restaurant Page", image: "/s3.png" },
+    { title: "Christos Greek Cypriot Restaurant", image: "/s4.png" },
   ],
 
-  Leads: [
-    {
-      title: "55 Leads Generated",
-      subtitle: "Cost per lead: $2.98",
-      image: "/portfolio/leads/lead-1.png",
-    },
-    {
-      title: "21 Leads Generated",
-      subtitle: "Cost per lead: $5.03",
-      image: "/portfolio/leads/lead-2.png",
-    },
-    {
-      title: "43 Leads Generated",
-      subtitle: "Cost per lead: $6.84",
-      image: "/portfolio/leads/lead-3.png",
-    },
-    {
-      title: "96 Leads Generated",
-      subtitle: "Cost per lead: $2.90",
-      image: "/portfolio/leads/lead-4.png",
-    },
-    {
-      title: "269 Leads Generated",
-      subtitle: "Cost per lead: $7.03",
-      image: "/portfolio/leads/lead-5.png",
-    },
-    {
-      title: "402 Leads Generated",
-      subtitle: "Cost per lead: $6.88",
-      image: "/portfolio/leads/lead-6.png",
-    },
-  ],
-
-  Logos: [
-    {
-      title: "Gilded Fork",
-      subtitle: "Brand identity design",
-      image: "/portfolio/logos/gilded_fork.png",
-    },
-    {
-      title: "Aspire Academy",
-      subtitle: "Educational logo concept",
-      image: "/portfolio/logos/aspire_academy.png",
-    },
-    {
-      title: "Grillora",
-      subtitle: "Restaurant logo branding",
-      image: "/portfolio/logos/grillora.png",
-    },
-    {
-      title: "Elonia",
-      subtitle: "Elegant brand identity",
-      image: "/portfolio/logos/elonia.png",
-    },
-    {
-      title: "Corex",
-      subtitle: "Bold visual identity",
-      image: "/portfolio/logos/corex.png",
-    },
-    {
-      title: "BitBloom",
-      subtitle: "Creative logo concept",
-      image: "/portfolio/logos/bitbloom.png",
-    },
-    {
-      title: "Chicora",
-      subtitle: "Fashion-inspired logo identity",
-      image: "/portfolio/logos/chicora.png",
-    },
-    {
-      title: "Lunora",
-      subtitle: "Minimal premium logo design",
-      image: "/portfolio/logos/lunora.png",
-    },
-    {
-      title: "BeatBloom",
-      subtitle: "Music-inspired visual branding",
-      image: "/portfolio/logos/beatbloom.png",
-    },
-  ],
-
-  "Social Media": [
-    {
-      title: "Social Media Management Showcase",
-      subtitle: "Managed pages, content, branding, and engagement",
-      image: "/portfolio/social/social-full.png",
-    },
-  ],
 };
 
 const highlights = [

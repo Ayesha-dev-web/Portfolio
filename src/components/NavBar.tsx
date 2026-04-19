@@ -1,152 +1,96 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Contact", href: "/contact" },
-  { label: "Testimonials", href: "/testimonials" },
-];
+import { Menu, X, Download } from "lucide-react";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const closeMenu = () => setMenuOpen(false);
+  const [open, setOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "border-b border-yellow-700/20 bg-black/80 backdrop-blur-xl"
-          : "bg-black/40 backdrop-blur-md"
-      }`}
-    >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8 lg:px-10">
-        <Link href="/" className="flex items-center gap-4">
-          <div className="relative h-16 w-16 md:h-20 md:w-20 overflow-hidden rounded-full border border-yellow-500/30 bg-black/60 shadow-[0_0_30px_rgba(212,175,55,0.20)]">
+    <nav className="fixed top-0 w-full z-50 bg-[#050505]/80 backdrop-blur-lg border-b border-yellow-500/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
+
+        {/* LOGO + TEXT */}
+        <Link href="/" className="flex items-center gap-3">
+          <div className="relative h-14 w-14 overflow-hidden rounded-full border border-yellow-500/25 bg-black/60 shadow-[0_0_25px_rgba(212,175,55,0.15)]">
             <Image
-              src="/logo.png"
-              alt="Portfolio Logo"
+              src="/logo1.png"
+              alt="Logo"
               fill
               className="object-contain p-2"
-              sizes="80px"
-              priority
             />
           </div>
 
-          <div className="hidden sm:block">
-            
+          <div>
+            <h2 className="text-lg font-semibold text-white leading-tight">
+              HAFSA BNT HRB
+            </h2>
+            <p className="text-xs tracking-[0.2em] text-yellow-400 uppercase">
+              Portfolio
+            </p>
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="text-sm font-medium text-white/80 transition hover:text-yellow-400"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
+          <Link href="/" className="hover:text-yellow-400 transition">Home</Link>
+          <Link href="/services" className="hover:text-yellow-400 transition">Services</Link>
+          <Link href="/portfolio" className="hover:text-yellow-400 transition">Portfolio</Link>
+          <Link href="/testimonials" className="hover:text-yellow-400 transition">Testimonials</Link>
+          <Link href="/contact" className="hover:text-yellow-400 transition">Contact</Link>
 
-        <div className="hidden lg:flex items-center gap-3">
+          {/* CV BUTTON */}
           <a
             href="/cv.pdf"
             download
-            className="rounded-full border border-yellow-500/30 px-5 py-2.5 text-sm font-medium text-white transition hover:border-yellow-400/60 hover:bg-yellow-500/10 hover:text-yellow-300"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-5 py-2 text-xs font-semibold text-black shadow-[0_10px_25px_rgba(212,175,55,0.25)] hover:-translate-y-0.5 transition"
           >
+            <Download size={14} />
             Download CV
           </a>
-
-          <Link
-            href="/contact"
-            className="rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-5 py-2.5 text-sm font-semibold text-black shadow-[0_10px_30px_rgba(212,175,55,0.22)] transition hover:-translate-y-0.5"
-          >
-            Hire Me
-          </Link>
         </div>
 
+        {/* MOBILE MENU BUTTON */}
         <button
-          type="button"
-          onClick={() => setMenuOpen((prev) => !prev)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-yellow-500/25 bg-black/60 text-yellow-400 transition hover:border-yellow-400/50 hover:bg-yellow-500/10 lg:hidden"
-          aria-label="Toggle menu"
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-white"
         >
-          <div className="flex flex-col gap-1.5">
-            <span
-              className={`block h-[2px] w-5 bg-current transition ${
-                menuOpen ? "translate-y-[7px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-[2px] w-5 bg-current transition ${
-                menuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-[2px] w-5 bg-current transition ${
-                menuOpen ? "-translate-y-[7px] -rotate-45" : ""
-              }`}
-            />
-          </div>
+          {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
-      <div
-        className={`overflow-hidden transition-all duration-300 lg:hidden ${
-          menuOpen
-            ? "max-h-[500px] border-t border-yellow-700/20 bg-black/95"
-            : "max-h-0"
-        }`}
-      >
-        <div className="mx-auto max-w-7xl px-5 py-5 md:px-8">
-          <nav className="flex flex-col gap-2">
-            {navLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={closeMenu}
-                className="rounded-2xl px-4 py-3 text-sm font-medium text-white/85 transition hover:bg-yellow-500/10 hover:text-yellow-300"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+      {/* MOBILE MENU */}
+      {open && (
+        <div className="md:hidden bg-[#050505] border-t border-yellow-500/10 px-6 py-6 space-y-5 text-gray-300">
+          <Link href="/" onClick={() => setOpen(false)} className="block hover:text-yellow-400">
+            Home
+          </Link>
+          <Link href="/services" onClick={() => setOpen(false)} className="block hover:text-yellow-400">
+            Services
+          </Link>
+          <Link href="/portfolio" onClick={() => setOpen(false)} className="block hover:text-yellow-400">
+            Portfolio
+          </Link>
+          <Link href="/testimonials" onClick={() => setOpen(false)} className="block hover:text-yellow-400">
+            Testimonials
+          </Link>
+          <Link href="/contact" onClick={() => setOpen(false)} className="block hover:text-yellow-400">
+            Contact
+          </Link>
 
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            <a
-              href="/cv.pdf"
-              download
-              onClick={closeMenu}
-              className="rounded-full border border-yellow-500/30 px-5 py-3 text-center text-sm font-medium text-white transition hover:border-yellow-400/60 hover:bg-yellow-500/10 hover:text-yellow-300"
-            >
-              Download CV
-            </a>
-
-            <Link
-              href="/contact"
-              onClick={closeMenu}
-              className="rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-5 py-3 text-center text-sm font-semibold text-black shadow-[0_10px_30px_rgba(212,175,55,0.22)] transition hover:-translate-y-0.5"
-            >
-              Hire Me
-            </Link>
-          </div>
+          {/* CV BUTTON MOBILE */}
+          <a
+            href="/cv.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-5 py-2 text-sm font-semibold text-black"
+          >
+            <Download size={16} />
+            Download CV
+          </a>
         </div>
-      </div>
-    </header>
+      )}
+    </nav>
   );
 }

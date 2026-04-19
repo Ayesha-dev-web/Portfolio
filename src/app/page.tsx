@@ -2,9 +2,9 @@ import Navbar from "../components/NavBar";
 import HeroSection from "../components/Hero";
 import About from "../components/About"
 import Service from "../components/Service"
-import ProcessSection from "../components/ProcessSection" 
+
 import Portfolio from "../components/Portfolio"
-import Result from "../components/Result";
+
 import ExperienceSection from "../components/Experience";
 import Section from "../components/Section";
 import TestimonialsSection from "../components/Testimonilas";
@@ -20,10 +20,10 @@ export default function HomePage() {
       <HeroSection />
       <About />
       <Service />
-      <ProcessSection />
+     
       <Section />
       <Portfolio />
-      <Result />
+
       <ExperienceSection />
       <TestimonialsSection />
       <ContactSection />
