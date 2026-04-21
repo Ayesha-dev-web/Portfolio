@@ -81,40 +81,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* review screenshots */}
-        <div className="mt-16">
-          <div className="mb-8 flex items-center justify-center gap-2 text-yellow-400">
-            <Star size={18} fill="currentColor" />
-            <Star size={18} fill="currentColor" />
-            <Star size={18} fill="currentColor" />
-            <Star size={18} fill="currentColor" />
-            <Star size={18} fill="currentColor" />
-            <span className="ml-2 text-sm uppercase tracking-[0.2em] text-yellow-300">
-              Fiverr Reviews
-            </span>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {reviewImages.map((image, index) => (
-              <motion.div
-                key={image}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.06 }}
-                viewport={{ once: true, amount: 0.2 }}
-                className="group overflow-hidden rounded-[26px] border border-yellow-500/15 bg-white/[0.02] p-3 transition hover:-translate-y-1 hover:border-yellow-400/30"
-              >
-                <div className="relative h-[320px] overflow-hidden rounded-[20px] bg-black">
-                  <Image
-                    src={image}
-                    alt={`Review ${index + 1}`}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      
 
         {/* bottom text */}
         <div className="mt-10 text-center">

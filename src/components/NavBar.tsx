@@ -25,7 +25,7 @@ export default function Navbar() {
 
           <div>
             <h2 className="text-lg font-semibold text-white leading-tight">
-              HAFSA BNT HRB
+              HAFSA 
             </h2>
             <p className="text-xs tracking-[0.2em] text-yellow-400 uppercase">
               Portfolio

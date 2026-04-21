@@ -32,18 +32,12 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-4">
               <div className="relative h-16 w-16 overflow-hidden rounded-full border border-yellow-500/25 bg-black/60 shadow-[0_0_30px_rgba(212,175,55,0.12)]">
-                <Image
-                  src="/logo.png"
-                  alt="Logo"
-                  fill
-                  className="object-contain p-2"
-                  sizes="64px"
-                />
+                
               </div>
 
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-yellow-500/80">
-                  Professional
+                  HAFSA
                 </p>
                 <h3 className="text-lg font-semibold text-white">Portfolio</h3>
               </div>

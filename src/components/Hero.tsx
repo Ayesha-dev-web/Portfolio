@@ -185,7 +185,7 @@ export default function Hero() {
             <div className="rounded-[28px] border border-yellow-500/15 bg-black/75 p-5 md:p-7">
               <div className="mb-5 flex items-center justify-between">
                 <div>
-                 
+                 s
                   <h2 className="mt-2 text-xl font-semibold text-white md:text-2xl">
                     Digital Growth Overview
                   </h2>
@@ -284,7 +284,7 @@ export default function Hero() {
               opacity: { duration: 0.8, delay: 1.2 },
               y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
             }}
-            className="absolute -bottom-8 -left-2 w-[220px] rounded-[24px] border border-yellow-500/20 bg-black/80 p-4 shadow-[0_0_30px_rgba(212,175,55,0.10)] backdrop-blur-xl sm:left-[-20px] md:w-[260px]"
+            className="absolute -bottom-22 -left-2 w-[220px] rounded-[24px] border border-yellow-500/20 bg-black/80 p-4 shadow-[0_0_30px_rgba(212,175,55,0.10)] backdrop-blur-xl sm:left-[-20px] md:w-[260px]"
           >
             <p className="text-xs uppercase tracking-[0.25em] text-yellow-500/80">
               Core Skills
