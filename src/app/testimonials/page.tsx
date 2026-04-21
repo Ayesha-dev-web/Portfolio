@@ -4,10 +4,18 @@ import Image from "next/image";
 import { Star, MessageCircle, BadgeCheck, Users, Video } from "lucide-react";
 
 const reviewImages = [
-  "/testimonials/review-1.png",
-  "/testimonials/review-2.png",
-  "/testimonials/review-3.png",
-  "/testimonials/review-4.png",
+  "/r1.png",
+  "/r2.png",
+  "/r3.png",
+  "/r4.png",
+  "/r5.png",
+  "/r6.png",
+  "/r7.png",
+  "/r8.png",
+  "/r9.png",
+  "/r10.png",
+  "/r11.png",
+  "/r12.png",
 ];
 
 const trustPoints = [
