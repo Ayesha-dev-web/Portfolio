@@ -99,7 +99,7 @@ export default function Footer() {
                   href="tel:+923175108000"
                   className="text-sm text-gray-300 hover:text-yellow-300"
                 >
-                  +92 317 5108000
+                  +92 3146098892
                 </a>
               </div>
             </div>
