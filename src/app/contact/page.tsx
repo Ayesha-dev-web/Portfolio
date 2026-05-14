@@ -19,8 +19,8 @@ const contactCards = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+92 317 5108000",
-    href: "tel:+923175108000",
+    value: "+92 03146098892",
+    href: "tel:+9203146098892",
   },
   {
     icon: MapPin,
@@ -73,7 +73,7 @@ export default function ContactPage() {
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="https://wa.me/923175108000?text=Hi%20I%20want%20to%20work%20with%20you"
+                  href="https://wa.me/923146098892?text=Hi%20I%20want%20to%20work%20with%20you"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-7 py-3.5 text-sm font-semibold text-black shadow-[0_10px_30px_rgba(212,175,55,0.25)] transition hover:-translate-y-1"
@@ -244,7 +244,7 @@ export default function ContactPage() {
                   </a>
 
                   <a
-                    href="tel:+923175108000"
+                    href="tel:+923146098892"
                     className="flex items-start gap-4 rounded-2xl border border-yellow-500/15 bg-black/35 p-4 transition hover:border-yellow-400/30"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/10 text-yellow-400">
@@ -253,13 +253,13 @@ export default function ContactPage() {
                     <div>
                       <p className="text-sm text-gray-400">Phone</p>
                       <p className="mt-1 text-sm text-white md:text-base">
-                        +92 317 5108000
+                        +92 314 609 8892
                       </p>
                     </div>
                   </a>
 
                   <a
-                    href="https://wa.me/923175108000?text=Hi%20I%20want%20to%20work%20with%20you"
+                    href="https://wa.me/923146098892?text=Hi%20I%20want%20to%20work%20with%20you"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-start gap-4 rounded-2xl border border-yellow-500/15 bg-black/35 p-4 transition hover:border-yellow-400/30"
@@ -327,7 +327,7 @@ export default function ContactPage() {
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="https://wa.me/923175108000?text=Hi%20I%20want%20to%20work%20with%20you"
+                href="https://wa.me/923146098892?text=Hi%20I%20want%20to%20work%20with%20you"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 px-7 py-3.5 text-sm font-semibold text-black shadow-[0_10px_30px_rgba(212,175,55,0.25)] transition hover:-translate-y-1"
